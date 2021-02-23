@@ -1,0 +1,180 @@
+@media (max-width: 1320px) {
+  .header {
+    background-image: url('../img/header-bg-960.png');
+  }
+}
+
+@media (max-width: 1260px) {
+  .header {
+    &__top-inner {
+      padding: 20px 40px;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__logo {
+      margin-right: auto;
+    }
+
+    .menu-btn {
+      display: flex;
+    }
+  }
+
+  .slider {
+    .slick-slide {
+      width: 350px;
+      height: 350px;
+    }
+    &__inner {
+      padding: 52px 0px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    background-image: url('../img/header-bg-640.png');
+
+    &__bottom-inner {
+      padding: 50px 0 60px;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+
+    &__login {
+      display: none;
+    }
+
+    &__menu-btn {
+      margin-left: 20px;
+    }
+
+    &__social {
+      display: none;
+    }
+  }
+
+  .slider {
+    .slick-slide {
+      width: 300px;
+      height: 300px;
+    }
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__nav-box {
+      margin-bottom: 40px;
+    }
+
+    &__item-title {
+      font-size: 22px;
+    }
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    &__top-inner {
+      padding: 20px 30px;
+    }
+
+    &__bottom-inner {
+      padding: 30px 0 40px;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-bottom: 35px;
+    }
+
+    &__tel {
+      display: none;
+    }
+    &__top-btn {
+      display: none;
+    }
+  }
+
+  .slider {
+    .slick-slide {
+      width: 230px;
+      height: 230px;
+    }
+
+    .slick-slide + .slick-slide {
+      margin-left: 30px;
+    }
+
+    &__inner {
+      padding: 40px 0;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+    &__title {
+      margin-bottom: 14px;
+    }
+
+    &__item {
+      padding: 26px 30px 30px 30px;
+    }
+
+    &__item-title {
+      font-size: 18px;
+    }
+
+    &__link {
+      margin-left: 0;
+    }
+
+    &__nav {
+      display: none;
+    }
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 29px;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 340px) {
+  .header {
+    &__bottom-btn {
+      text-align: center;
+      width: 100%;
+    }
+    &__title {
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+}
