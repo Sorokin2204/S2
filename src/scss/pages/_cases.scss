@@ -1,0 +1,62 @@
+.cases {
+  &__inner {
+    padding: 78px 0 88px;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+  }
+
+  &__head-title {
+  }
+
+  &__head-link {
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 290px;
+  }
+
+  &__title {
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 73px;
+    color: $magenta;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    color: $grey;
+    margin-bottom: 26px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 140%;
+    color: $grey-dark;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+  }
+}
+.container {
+}
+.title {
+}
+.link {
+}

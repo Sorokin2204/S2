@@ -1,0 +1,51 @@
+.reg-app {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  &__inner {
+    padding: 46px 0 60px;
+  }
+
+  &__content {
+    max-width: 510px;
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 36px;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 140%;
+    color: $white;
+    margin-bottom: 42px;
+  }
+
+  &__input {
+    margin-bottom: 28px;
+    width: 510px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 14px;
+    color: $white;
+    font-size: 20px;
+    line-height: 140%;
+    &::placeholder {
+      color: $white;
+      font-size: 20px;
+      line-height: 140%;
+    }
+  }
+
+  &__btn {
+    padding: 14px 24px 20px 24px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid $white;
+    font-size: 18px;
+  }
+}

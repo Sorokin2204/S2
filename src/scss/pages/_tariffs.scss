@@ -1,0 +1,233 @@
+.tariffs {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  &__inner {
+    padding: 46px 0px 60px;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 46px;
+  }
+
+  &__head-title {
+    color: $white;
+  }
+
+  &__head-link {
+    color: $white;
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+
+  &__card {
+    border-radius: 10px;
+  }
+
+  &__content {
+    z-index: 1;
+    border-radius: 10px 10px 0px 0px;
+    background-color: $white;
+    padding: 33px 40px 40px 40px;
+  }
+  &__title {
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+    color: $purple;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 140%;
+    margin-bottom: 23px;
+  }
+
+  &__price-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 33px;
+  }
+
+  &__profit-price {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 42px;
+    position: relative;
+    padding-right: 156px;
+    &::before {
+      top: 9px;
+      right: 0;
+      position: absolute;
+      display: inline-block;
+      content: 'За пользователя в месяц при оплате за год';
+      font-size: 13px;
+      line-height: 110%;
+      width: 150px;
+    }
+
+    &::after {
+      content: '₽/';
+      margin-left: 6px;
+    }
+  }
+
+  &__regular-price {
+    margin-left: 30px;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 110%;
+    color: $grey;
+    position: relative;
+
+    &::before {
+      top: 16px;
+      left: 0;
+      font-weight: normal;
+      position: absolute;
+      display: inline-block;
+      content: 'при оплате за 3 месяца';
+      font-size: 13px;
+      line-height: 110%;
+      width: 150px;
+    }
+    &::after {
+      content: '₽/месяц';
+      margin-left: 2px;
+    }
+  }
+
+  &__btn {
+    padding: 15px 24px 16px 24px;
+  }
+
+  &__expander {
+    cursor: pointer;
+    position: relative;
+    padding: 36px 33px 34px 40px;
+    background-color: $grey-light;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  &__expander-title {
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 26px;
+    span {
+      color: $purple;
+    }
+  }
+
+  &__expander-arrow {
+    display: inline-block;
+    position: relative;
+    min-width: 30px;
+    min-height: 30px;
+    background-color: $blue;
+    border-radius: 100px;
+    &::after {
+      width: 14px;
+      height: 8px;
+      content: '';
+      mask: url(../img/arrow-down.svg);
+      -webkit-mask-size: 14px 8px;
+      background-color: $white;
+      position: absolute;
+      top: 51%;
+      left: 50%;
+      transform: translate(-50%, -51%);
+    }
+  }
+
+  &__expander-content {
+    display: none;
+    z-index: 2;
+    padding: 0 40px 40px 40px;
+    width: 100%;
+    position: absolute;
+    top: 91px;
+    left: 0;
+    flex-basis: 100%;
+    background-color: $grey-light;
+  }
+
+  &__expander-text {
+    margin-bottom: 30px;
+  }
+
+  &__expander-text-link {
+    color: $blue;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 0px;
+      background-color: $blue;
+    }
+  }
+
+  &__expander-list {
+    margin-bottom: 30px;
+    display: grid;
+    grid-row-gap: 15px;
+    grid-column-gap: 40px;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__expander-list-item {
+    line-height: 140%;
+    padding-left: 20px;
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      content: '';
+      display: block;
+      width: 2px;
+      height: 10px;
+      background-color: $green;
+      border-radius: 1px;
+      transform: rotate(-90deg);
+    }
+    &::before {
+      top: 6px;
+      left: 5px;
+      position: absolute;
+      content: '';
+      display: block;
+      width: 2px;
+      height: 10px;
+      background-color: $green;
+      border-radius: 1px;
+    }
+  }
+
+  &__expander-link {
+  }
+}

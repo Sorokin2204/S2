@@ -1,0 +1,52 @@
+.steps {
+  &__inner {
+    padding: 76px 0 90px;
+    text-align: center;
+  }
+
+  &__head {
+    padding-bottom: 58px;
+  }
+
+  &__head-title {
+    text-align: left;
+  }
+
+  &__box {
+    margin-bottom: 86px;
+    display: grid;
+    grid-template-columns: repeat(2, 620px);
+    grid-row-gap: 54px;
+    grid-column-gap: 40px;
+  }
+
+  &__item {
+    text-align: left;
+  }
+
+  &__title {
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 73px;
+    color: $magenta;
+    margin-bottom: 11px;
+  }
+
+  &__text {
+    line-height: 140%;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+  }
+
+  &__btn {
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 29px;
+    color: $grey-dark;
+    padding: 21px 30px 24px 30px;
+  }
+}

@@ -9,13 +9,14 @@ body {
   font-family: 'Commissioner', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  color: $grey-dark;
 }
 
 a {
   display: inline-block;
   text-decoration: none;
   outline: none;
-
+  user-select: none;
   &:active,
   &:focus {
     outline: none;
@@ -28,7 +29,7 @@ li {
 
 .container {
   margin: 0 auto;
-  padding: 0px 40px;
+  padding: 0px 20px;
   max-width: 1320px;
   &--full {
     padding: 0px !important;
@@ -52,11 +53,16 @@ li {
 }
 .btn {
   font-weight: 500;
-  font-size: 14px;
   color: $white;
   background-color: $blue;
   border-radius: 100px;
-  padding: 12px 18px;
+  display: inline-block;
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $blue;
+  }
+
+  user-select: none;
 }
 .social {
   display: flex;
@@ -112,6 +118,8 @@ li {
   }
 
   &__item {
+    cursor: pointer;
+    user-select: none;
     & + & {
       margin-left: 24px;
     }
@@ -133,7 +141,7 @@ li {
       .menu__link {
         transition: all 0.2s;
         &::after {
-          content: url(../img/arrow-down.svg);
+          content: url(../img/arrow-down-small.svg);
           position: absolute;
           display: block;
           top: 0px;
@@ -274,14 +282,8 @@ li {
   }
 }
 
-.slick-slide {
-  width: 400px;
-  & + & {
-    margin-left: 40px;
-  }
-}
 .slick-list {
-  margin-right: -40px;
+  //margin-right: -40px;
 }
 
 .title {
@@ -291,12 +293,14 @@ li {
   font-weight: 900;
   font-size: 42px;
   line-height: 56px;
+  max-width: 950px;
 }
 
 .link {
   font-weight: 600;
   font-size: 18px;
   color: $blue;
+  display: inline-block;
   &::after {
     content: '';
     display: block;
@@ -304,5 +308,55 @@ li {
     height: 2px;
     margin-top: 2px;
     background-color: $blue;
+  }
+
+  &--small {
+    font-weight: 400;
+
+    &::after {
+      height: 1px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.subtitle {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.nav {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid #2d97ea;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  &::after {
+    width: 9px;
+    height: 16px;
+    content: '';
+    mask-size: cover;
+    background-color: $blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.nav-left {
+  &::after {
+    mask: url(../img/arrow-left.svg);
+  }
+}
+
+.nav-right {
+  &::after {
+    mask: url(../img/arrow-right.svg);
   }
 }

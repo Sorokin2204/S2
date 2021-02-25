@@ -5,6 +5,27 @@ $(function () {
 
     prevArrow: '.slider__nav-left',
     nextArrow: '.slider__nav-right',
+
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
+  });
+
+  $('.reason__slider-box').slick({
+    variableWidth: true,
+    slidesToShow: 1,
+    prevArrow: '.reason__nav-left',
+    nextArrow: '.reason__nav-right',
+  });
+
+  $('.comments__slider-box').slick({
+    prevArrow: '.comments__nav-left',
+    nextArrow: '.comments__nav-right',
   });
 
   $('.header__top-inner')

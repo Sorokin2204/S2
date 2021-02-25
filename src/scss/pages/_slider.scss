@@ -1,20 +1,23 @@
 .slider {
+  .slick-slide {
+    width: 400px;
+  }
+
+  .slick-slide + .slick-slide {
+    margin-left: 40px !important;
+  }
+
   &__inner {
     padding: 80px 0 60px;
   }
 
   &__subtitle {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 140%;
     color: $grey;
-    text-transform: uppercase;
   }
 
   &__title {
     color: $grey-dark;
     margin-bottom: 38px;
-    max-width: 950px;
   }
 
   &__nav-box {
@@ -23,33 +26,11 @@
     margin-bottom: 50px;
   }
 
-  &__nav {
-    position: relative;
-    border-radius: 50%;
-    border: 2px solid #2d97ea;
-    width: 48px;
-    height: 48px;
-  }
-
   &__nav-left {
-    &::after {
-      content: url(../img/arrow-left.svg);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 
   &__nav-right {
     margin-left: 25px;
-    &::after {
-      content: url(../img/arrow-right.svg);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 
   &__link {
