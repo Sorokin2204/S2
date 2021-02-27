@@ -17,11 +17,12 @@
   }
 
   &__box {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 290px);
+    grid-gap: 40px;
   }
   &__item {
-    width: 290px;
+    //width: 290px;
   }
 
   &__title {

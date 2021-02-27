@@ -12,13 +12,16 @@
   }
 
   &__box {
+    align-self: stretch;
+
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(5, auto);
     margin-bottom: 58px;
   }
 
   &__img {
-    & + & {
-      margin-left: 70px;
-    }
   }
 
   &__link {

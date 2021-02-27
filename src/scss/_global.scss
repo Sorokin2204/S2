@@ -242,7 +242,8 @@ li {
   &--mobile {
     // overflow: hidden;
     // height: 0px;
-    visibility: visible;
+    // visibility: visible;
+
     opacity: 1;
     transform: none;
     z-index: auto;
@@ -312,10 +313,15 @@ li {
 
   &--small {
     font-weight: 400;
-
+    width: calc(100%);
+    background-image: linear-gradient(transparent calc(100% - 1px), $blue 1px);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    //border-bottom: 1px solid $blue;
+    display: inline;
     &::after {
-      height: 1px;
-      margin-top: 0px;
+      display: none;
     }
   }
 }

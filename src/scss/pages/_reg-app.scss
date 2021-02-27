@@ -23,7 +23,6 @@
   }
 
   &__input {
-    margin-bottom: 28px;
     width: 510px;
     border: none;
     outline: none;
@@ -33,6 +32,10 @@
     color: $white;
     font-size: 20px;
     line-height: 140%;
+    & + & {
+      margin-top: 28px;
+    }
+
     &::placeholder {
       color: $white;
       font-size: 20px;
@@ -47,5 +50,6 @@
     background-color: transparent;
     border: 2px solid $white;
     font-size: 18px;
+    margin-top: 40px;
   }
 }

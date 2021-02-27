@@ -62,51 +62,54 @@
     margin-bottom: 33px;
   }
 
+  &__profit-price-box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__profit-price-terms {
+    font-size: 13px;
+    line-height: 110%;
+    display: inline-block;
+    width: 150px;
+    margin-left: 6px;
+    margin-top: 2px;
+  }
+
   &__profit-price {
     display: inline-block;
     font-weight: normal;
     font-size: 34px;
     line-height: 42px;
-    position: relative;
-    padding-right: 156px;
-    &::before {
-      top: 9px;
-      right: 0;
-      position: absolute;
-      display: inline-block;
-      content: 'За пользователя в месяц при оплате за год';
-      font-size: 13px;
-      line-height: 110%;
-      width: 150px;
-    }
-
     &::after {
       content: '₽/';
       margin-left: 6px;
     }
   }
 
-  &__regular-price {
+  &__regular-price-box {
     margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__regular-price-terms {
+    font-weight: normal;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 110%;
+    color: $grey;
+  }
+
+  &__regular-price {
     margin-top: 10px;
     display: inline-block;
     font-weight: bold;
     font-size: 13px;
     line-height: 110%;
     color: $grey;
-    position: relative;
 
-    &::before {
-      top: 16px;
-      left: 0;
-      font-weight: normal;
-      position: absolute;
-      display: inline-block;
-      content: 'при оплате за 3 месяца';
-      font-size: 13px;
-      line-height: 110%;
-      width: 150px;
-    }
     &::after {
       content: '₽/месяц';
       margin-left: 2px;
@@ -120,16 +123,18 @@
   &__expander {
     cursor: pointer;
     position: relative;
-    padding: 36px 33px 34px 40px;
+    padding: 33px 33px 34px 40px;
     background-color: $grey-light;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-items: center;
     border-radius: 0px 0px 10px 10px;
   }
 
   &__expander-title {
+    display: inline-block;
     font-family: Ruda;
     font-style: normal;
     font-weight: 900;
@@ -140,6 +145,12 @@
     }
   }
 
+  &__expander-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__expander-arrow {
     display: inline-block;
     position: relative;
@@ -147,6 +158,7 @@
     min-height: 30px;
     background-color: $blue;
     border-radius: 100px;
+    margin-left: 20px;
     &::after {
       width: 14px;
       height: 8px;
