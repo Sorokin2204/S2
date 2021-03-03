@@ -1,3 +1,4 @@
+var image_field;
 $(function () {
   $('.slider__box').slick({
     infinite: false,
@@ -54,25 +55,21 @@ $(function () {
       $(this).addClass('menu__item--sub-menu');
       $(this).click(function (e) {
         if ($(this).parent().hasClass('menu--mobile')) {
-          //    $(this).attr('aria-expanded', false);
-          $(this).attr('disabled', true);
-          var dropDown = $(this).find('sub-menu--mobile');
-
-          $(this).parent().find('.sub-menu--mobile').not(dropDown).slideUp();
-
-          if ($(this).hasClass('.menu-item--active')) {
-            $(this).removeClass('menu-item--active');
-          } else {
-            $(this)
-              .parent()
-              .find('menu-item--active')
-              .removeClass('menu-item--active');
-            $(this).addClass('menu-item--active');
-          }
-
-          dropDown.stop(false, true).slideToggle();
-
-          e.preventDefault();
+          // //    $(this).attr('aria-expanded', false);
+          // $(this).attr('disabled', true);
+          // var dropDown = $(this).find('sub-menu--mobile');
+          // $(this).parent().find('.sub-menu--mobile').not(dropDown).slideUp();
+          // if ($(this).hasClass('.menu-item--active')) {
+          //   $(this).removeClass('menu-item--active');
+          // } else {
+          //   $(this)
+          //     .parent()
+          //     .find('menu-item--active')
+          //     .removeClass('menu-item--active');
+          //   $(this).addClass('menu-item--active');
+          // }
+          // dropDown.stop(false, true).slideToggle();
+          // e.preventDefault();
         } else {
           e.stopPropagation();
           $('.menu__item--active')
@@ -109,6 +106,19 @@ $(function () {
       'header__top-inner--mobile-active',
     );
   });
+
+  $('.select-img').on('click', function (evt) {
+    alert('asdf');
+    image_field = $(this).siblings('.img');
+    tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
+    return false;
+  });
+
+  window.send_to_editor = function (html) {
+    imgurl = $('img', html).attr('src');
+    image_field.val(imgurl);
+    tb_remove();
+  };
 });
 
 function tariffsContainer() {

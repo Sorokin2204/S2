@@ -21,7 +21,7 @@ var order = require('gulp-order');
 // const newer = require('gulp-newer');
 /// Paths
 const srcPath = 'src/';
-const distPath = 'dist/';
+const distPath = 'assets/';
 const path = {
   build: {
     html: distPath,
@@ -31,6 +31,7 @@ const path = {
     fonts: distPath + 'fonts/',
   },
   src: {
+    php: '**/*.php',
     html: srcPath + '**/*.html',
     js: srcPath + 'js/**/*.js',
     css: srcPath + 'scss/**/*.scss',
@@ -42,28 +43,33 @@ const path = {
 
 function browsersync() {
   browserSync.init({
-    server: {
-      baseDir: path.clean,
+    proxy: {
+      target: 'http://s2.loc/',
+      ws: true,
     },
     notify: false,
   });
 }
 
 ///HTML
-function html() {
-  return src([path.src.html, '!' + srcPath + '**/_*.html'])
-    .pipe(
-      include({
-        prefix: '@@',
-      }),
-    )
-    .pipe(
-      htmlmin({
-        collapseWhitespace: true,
-      }),
-    )
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.stream());
+// function html() {
+//   return src([path.src.html, '!' + srcPath + '**/_*.html'])
+//     .pipe(
+//       include({
+//         prefix: '@@',
+//       }),
+//     )
+//     .pipe(
+//       htmlmin({
+//         collapseWhitespace: true,
+//       }),
+//     )
+//     .pipe(dest(path.build.html))
+//     .pipe(browserSync.stream());
+// }
+
+function php() {
+  return src([path.src.php]).pipe(browserSync.stream());
 }
 ///STYLE
 function css() {
@@ -131,7 +137,8 @@ function clean() {
 }
 
 function watching() {
-  watch([path.src.html], html);
+  watch([path.src.php], php);
+  //watch([path.src.html], html);
   watch([path.src.css], css);
   watch([path.src.js], js);
   watch([path.src.img], img);
@@ -142,10 +149,11 @@ exports.css = css;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.js = js;
-exports.html = html;
+exports.php = php;
+//exports.html = html;
 exports.img = img;
 exports.clean = clean;
 exports.default = series(
   clean,
-  parallel(html, js, css, img, browsersync, watching),
+  parallel(js, css, img, php, browsersync, watching),
 );
