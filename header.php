@@ -10,7 +10,11 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" style="background-image: url(<?php if (isHomePage()) {
+                                                            echo  _s2_assets_path('img/header-bg-1920.png');
+                                                        } else {
+                                                            echo  _s2_assets_path('img/header-bg-home-1920.png');
+                                                        } ?>)">
         <div class="header__inner">
             <div class="header__top">
                 <div class="container container--full">
@@ -51,27 +55,18 @@
                 </div>
             </div>
             <div class="menu-over"></div>
-            <div class="header__bottom">
-                <div class="container">
-                    <div class="header__bottom-inner">
-                        <div class="header__content">
-                            <h1 class="header__title title">
-                                <span>S2.</span> Бизнес-приложения для больших продаж и лёгкого
-                                управления.
-                            </h1>
+            <?php
+            function isHomePage()
+            {
+                $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                return in_array($path, ['/', '/home.html', '/index']);
+            }
 
-                            <p class="header__text">
-                                Мы создали для вас настоящий много функциональный центр управления
-                                компанией. В одном окне CRM и склад, трекеры задач и проектов,
-                                документооборот и кадры, аналитика, кассы, учёт финансов и многое
-                                другое. Главное — вы всегда получаете готовое персональное
-                                решение.
-                            </p>
-
-                            <a href="#" class="header__bottom-btn btn">Попробовать</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            if (isHomePage()) {
+                get_template_part('header-bottom-home');
+            } else {
+                get_template_part('header-bottom');
+            }
+            ?>
         </div>
     </header>

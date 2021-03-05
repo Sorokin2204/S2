@@ -38,6 +38,11 @@ $(function () {
     nextArrow: '.comments__nav-right',
   });
 
+  $('.business-apps-item-control__slider').slick({
+    arrows: false,
+    dots: true,
+  });
+
   $('.header__top-inner')
     .clone()
     .appendTo('.header__top .container')

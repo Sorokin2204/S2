@@ -78,27 +78,6 @@ li {
   &__link {
     display: block;
   }
-
-  // &__link-facebook {
-  //   svg {
-  //     width: 20px;
-  //     height: 20px;
-  //   }
-  // }
-
-  // &__link-vk {
-  //   svg {
-  //     width: 20px;
-  //     height: 20px;
-  //   }
-  // }
-
-  // &__link-youtube {
-  //   svg {
-  //     width: 26px;
-  //     height: 18px;
-  //   }
-  // }
 }
 
 .menu {
@@ -302,11 +281,21 @@ li {
   max-width: 950px;
 }
 
+.title-h2 {
+  font-family: Ruda;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 33px;
+  line-height: 44px;
+  color: $grey-dark;
+}
+
 .link {
   font-weight: 600;
   font-size: 18px;
   color: $blue;
   display: inline-block;
+  white-space: nowrap;
   &::after {
     content: '';
     display: block;
@@ -369,5 +358,25 @@ li {
 .nav-right {
   &::after {
     mask: url(../img/arrow-right.svg);
+  }
+}
+
+.list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  &__item {
+    margin-right: 15px;
+  }
+
+  &__link {
+    line-height: 22px;
+
+    &--active {
+      opacity: 0.5;
+      &::after {
+        display: none;
+      }
+    }
   }
 }

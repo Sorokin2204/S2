@@ -39,7 +39,7 @@ function s2_setup()
 
 function s2_scripts()
 {
-    wp_enqueue_script('script-name', _s2_assets_path('js/script.min.js'), array(), '1.0', true);
+    wp_enqueue_script('script-name', _s2_assets_path('js/script.min.js'));
     wp_enqueue_style('style-name', _s2_assets_path('css/style.min.css'));
 }
 

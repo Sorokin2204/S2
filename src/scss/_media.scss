@@ -225,10 +225,14 @@
     background-image: url('../img/header-bg-640.png');
 
     &__bottom-inner {
+      padding: 46px 0 60px;
+    }
+
+    &__home-bottom-inner {
       padding: 50px 0 60px;
     }
 
-    &__text {
+    &__home-bottom-text {
       font-size: 18px;
     }
 
@@ -432,14 +436,22 @@
     }
 
     &__bottom-inner {
-      padding: 30px 0 40px;
+      padding: 33px 0px 40px;
     }
 
-    &__title {
+    &__bottom-title {
       margin-bottom: 24px;
     }
 
-    &__text {
+    &__home-bottom-inner {
+      padding: 30px 0 40px;
+    }
+
+    &__home-bottom-title {
+      margin-bottom: 24px;
+    }
+
+    &__home-bottom-text {
       font-size: 16px;
       margin-bottom: 35px;
     }
@@ -450,6 +462,10 @@
     &__top-btn {
       display: none;
     }
+  }
+
+  .list {
+    flex-direction: column;
   }
 
   .slider {
@@ -781,6 +797,11 @@
     }
   }
 
+  .title-h2 {
+    font-size: 22px;
+    line-height: 29px;
+  }
+
   .title {
     font-size: 22px;
     line-height: 29px;
@@ -791,15 +812,10 @@
   }
 }
 
-@media (max-width: 405px) {
-  .steps {
-    &__btn {
-      border-radius: 37px;
-    }
-  }
-}
-
 @media (max-width: 550px) {
+  .header {
+  }
+
   .tariffs {
     &__inner {
       padding: 33px 0 40px;
@@ -852,14 +868,21 @@
     }
   }
 }
+@media (max-width: 405px) {
+  .steps {
+    &__btn {
+      border-radius: 37px;
+    }
+  }
+}
 
 @media (max-width: 340px) {
   .header {
-    &__bottom-btn {
+    &__home-bottom-btn {
       text-align: center;
       width: 100%;
     }
-    &__title {
+    &__home-bottom-title {
       span {
         display: block;
       }
