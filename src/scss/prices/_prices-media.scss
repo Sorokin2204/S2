@@ -1,0 +1,344 @@
+@media (max-width: 1320px) {
+  .prices {
+  }
+  .prices-tariffs {
+    &__inner {
+      padding: 50px 0 60px;
+    }
+
+    &__content {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    &__title {
+      margin-bottom: 25px;
+    }
+
+    &__text {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    &__toggle {
+    }
+
+    &__box {
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      grid-row-gap: 60px;
+    }
+
+    &__item {
+    }
+
+    &__item-title {
+    }
+
+    &__item-text {
+    }
+
+    &__item-price {
+    }
+
+    &__item-subprice {
+    }
+
+    &__item-btn {
+    }
+
+    &__item-function-title {
+    }
+
+    &__item-function-text {
+    }
+
+    &__item-function-list {
+    }
+
+    &__item-function-item {
+    }
+  }
+  .prices-comparison {
+    &__inner {
+      padding: 50px 0 60px;
+    }
+
+    &__head {
+      margin-bottom: 50px;
+    }
+
+    &__head-title {
+      width: auto;
+    }
+    &__head-item-title {
+    }
+
+    &__head-box {
+      display: none;
+    }
+
+    &__head-item {
+    }
+
+    &__head-item-price {
+    }
+
+    &__head-item-subprice {
+    }
+
+    &__box {
+    }
+
+    &__item {
+    }
+
+    &__item-head {
+    }
+
+    &__item-title {
+    }
+
+    &__item-head-box {
+    }
+
+    &__item-head-col {
+    }
+
+    &__item-box {
+    }
+
+    &__item-col {
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .prices {
+  }
+  .prices-tariffs {
+    &__inner {
+    }
+
+    &__content {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__toggle {
+    }
+
+    &__box {
+      grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+      grid-row-gap: 40px;
+    }
+
+    &__item {
+    }
+
+    &__item-title {
+    }
+
+    &__item-text {
+    }
+
+    &__item-price {
+    }
+
+    &__item-subprice {
+    }
+
+    &__item-btn {
+    }
+
+    &__item-function-title {
+    }
+
+    &__item-function-text {
+    }
+
+    &__item-function-list {
+    }
+
+    &__item-function-item {
+    }
+  }
+  .prices-comparison {
+    background-color: $grey-very-light;
+    &__inner {
+      padding: 50px 60px;
+    }
+
+    &__head {
+    }
+
+    &__head-title {
+    }
+    &__head-item-title {
+    }
+    &__head-box {
+    }
+
+    &__head-item {
+    }
+
+    &__head-item-price {
+    }
+
+    &__head-item-subprice {
+    }
+
+    &__box {
+    }
+
+    &__item {
+    }
+
+    &__item-head {
+    }
+
+    &__item-title {
+    }
+
+    &__item-head-box {
+    }
+
+    &__item-head-col {
+    }
+
+    &__item-box {
+    }
+
+    &__item-col {
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .prices {
+  }
+  .prices-tariffs {
+    &__inner {
+      padding: 33px 0 40px;
+    }
+
+    &__content {
+      margin-bottom: 34px;
+    }
+
+    &__title {
+      margin-bottom: 23px;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    &__toggle {
+      flex-direction: column;
+      align-items: start;
+      input {
+        margin: 0px;
+        transform: rotate(-90deg) translateY(-38%);
+      }
+    }
+
+    &__toggle-year {
+      margin-bottom: 20px;
+    }
+
+    &__toggle-mounth {
+      margin-top: 20px;
+    }
+
+    &__box {
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 30px;
+    }
+
+    &__item {
+    }
+
+    &__item-title {
+    }
+
+    &__item-text {
+    }
+
+    &__item-price {
+    }
+
+    &__item-subprice {
+    }
+
+    &__item-btn {
+      padding: 15px 17.5px 16px 17.5px;
+    }
+
+    &__item-function-title {
+    }
+
+    &__item-function-text {
+    }
+
+    &__item-function-list {
+    }
+
+    &__item-function-item {
+    }
+  }
+  .prices-comparison {
+    background-color: $grey-very-light;
+    &__inner {
+      padding: 60px 0;
+    }
+
+    &__head {
+      margin-bottom: 63px;
+    }
+
+    &__head-title {
+    }
+    &__head-item-title {
+    }
+    &__head-box {
+    }
+
+    &__head-item {
+    }
+
+    &__head-item-price {
+    }
+
+    &__head-item-subprice {
+    }
+
+    &__box {
+    }
+
+    &__item {
+    }
+
+    &__item-head {
+    }
+
+    &__item-title {
+    }
+
+    &__item-head-box {
+    }
+
+    &__item-head-col {
+    }
+
+    &__item-box {
+    }
+
+    &__item-col {
+    }
+  }
+}

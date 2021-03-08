@@ -38,7 +38,7 @@ $(function () {
     nextArrow: '.comments__nav-right',
   });
 
-  $('.business-apps-item-control__slider').slick({
+  $('.slider-img').slick({
     arrows: false,
     dots: true,
   });

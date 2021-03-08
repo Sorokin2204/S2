@@ -1,0 +1,22 @@
+.cases-item {
+  padding: 80px 0px 84px;
+
+  .aside-info__text {
+    margin-bottom: 40px;
+  }
+
+  .article__boost-box {
+    margin-top: 18px;
+  }
+  &__solution-list-number {
+    margin-bottom: 54px;
+  }
+
+  &__solution-bottom-aside-info {
+    align-self: end;
+  }
+
+  &__task-list-number {
+    margin-bottom: 84px;
+  }
+}

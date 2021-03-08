@@ -2,138 +2,9 @@
   .container {
     padding: 0 40px;
   }
+
   .header {
     background-image: url('../img/header-bg-960.png');
-  }
-
-  .reason {
-    .slick-slide {
-      width: 727px;
-    }
-    padding: 60px 0 40px;
-    &__top {
-      .container {
-        position: static;
-      }
-    }
-
-    &__slider {
-      padding: 0px;
-      width: 727px;
-      margin-left: 0;
-      margin-bottom: 60px;
-    }
-
-    &__slider-item {
-      max-width: 727px;
-    }
-    &__text {
-      max-width: 727px;
-    }
-
-    &__img {
-      width: auto;
-      max-width: none;
-    }
-
-    &__expander-box {
-      grid-template-columns: 100%;
-      grid-gap: 20px;
-    }
-
-    &__expander-title {
-      width: auto;
-    }
-  }
-
-  .cases {
-    &__inner {
-      padding: 46px 0 60px;
-    }
-    &__box {
-      grid-template-columns: repeat(2, 1fr);
-      grid-row-gap: 48px;
-    }
-  }
-
-  .tariffs {
-    &__box {
-      grid-template-columns: 1fr;
-    }
-
-    &__expander {
-      padding-bottom: 40px;
-    }
-
-    &__expander-title {
-    }
-
-    &__expander-list {
-      grid-column-gap: 40px;
-      grid-template-columns: repeat(2, minmax(220px, 380px));
-    }
-
-    &__expander-content {
-      margin-top: 25px;
-      position: static;
-      padding: 0;
-      padding-right: 7px;
-    }
-  }
-
-  .steps {
-    &__inner {
-      padding: 46px 0px 60px;
-      text-align: left;
-    }
-
-    &__box {
-      grid-template-columns: repeat(2, minmax(420px, auto));
-      grid-row-gap: 40px;
-    }
-    &__head {
-      margin-bottom: 28px;
-    }
-
-    &__box {
-      margin-bottom: 60px;
-    }
-
-    &__btn {
-      text-align: center;
-    }
-  }
-
-  .comments {
-    &__nav-left {
-      left: 40px;
-    }
-
-    &__nav-right {
-      right: 40px;
-    }
-
-    &__inner {
-      padding: 46px 0 60px;
-    }
-
-    &__item {
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-  }
-
-  .clients {
-    &__inner {
-      padding: 48px 0px 60px;
-    }
-  }
-
-  .reg-app {
-    &__inner {
-      padding-bottom: 32px;
-    }
-    background-image: url(../img/reg-app-bg-960.png) !important;
   }
 
   .footer {
@@ -184,6 +55,33 @@
       margin: 0px !important;
     }
   }
+
+  .aside-info {
+    width: 420px;
+  }
+
+  .article {
+    & + & {
+      margin-top: 50px;
+    }
+
+    &__content {
+      grid-template-columns: 100%;
+    }
+
+    &__top {
+      width: 100%;
+    }
+
+    &__bottom {
+    }
+
+    &__boost-box {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 0;
+      grid-row-gap: 25px;
+    }
+  }
 }
 
 @media (max-width: 1260px) {
@@ -206,16 +104,6 @@
 
     .menu-btn {
       display: flex;
-    }
-  }
-
-  .slider {
-    .slick-slide {
-      width: 350px;
-      height: 350px;
-    }
-    &__inner {
-      padding: 52px 0px;
     }
   }
 }
@@ -261,137 +149,20 @@
     }
   }
 
-  .slider {
-    .slick-slide {
-      width: 300px;
-      height: 300px;
-    }
-
-    &__title {
-      margin-bottom: 30px;
-    }
-
-    &__nav-box {
-      margin-bottom: 40px;
-    }
-
-    &__item-title {
-      font-size: 22px;
-    }
-  }
-
-  .reason {
-    padding: 53px 0px 40px;
-    &__top-title {
-      margin-bottom: 30px;
-    }
-
-    &__nav-box {
-      margin-bottom: 20px;
-    }
-
-    &__slider-item-text {
-      margin-bottom: 35px;
-    }
-
-    &__slider {
-      margin-bottom: 40px;
-    }
-
-    &__bottom-title {
-      margin-bottom: 37px;
-    }
-  }
-
-  .cases {
-    &__box {
-      grid-template-columns: 1fr;
-      grid-column-gap: 60px;
-    }
-  }
-
-  .tariffs {
-    &__head {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    &__head-title {
-      margin-bottom: 10px;
-    }
-  }
-
-  .steps {
-    &__head {
-      margin-bottom: 36px;
-    }
-
-    &__box {
-      grid-template-columns: 1fr;
-      grid-gap: 46px;
-    }
-  }
-
-  .comments {
-    &__inner {
-      padding-bottom: 0px;
-    }
-
-    &__title {
-      padding: 0 30px;
-    }
-
-    &__text {
-      font-size: 16px;
-    }
-  }
-
-  .clients {
-    &__inner {
-      padding-top: 78px;
-    }
-
-    &__title {
-      margin-bottom: 50px;
-    }
-
-    &__box {
-      grid-template-columns: repeat(3, auto) 0px;
-      grid-row-gap: 60px;
-      justify-content: space-around;
-      justify-items: center;
-      align-items: center;
-      align-content: center;
-    }
-
-    &__img {
-      grid-column: span 2;
-
-      &:nth-last-child(1):nth-child(odd) {
-        grid-column: 2 / span 2;
-      }
-
-      &:last-child {
-        margin-left: -20%;
-      }
-    }
-  }
-
-  .reg-app {
-    background: linear-gradient(180deg, #2d97ea 0%, #1d75b9 100%) !important;
-    &__inner {
-      padding-bottom: 60px;
-    }
-
-    &__title {
-      margin-bottom: 17px;
-    }
-  }
-
   .footer {
     &__contact-box,
     &__list-box {
       grid-template-columns: repeat(2, 260px);
+    }
+  }
+
+  .aside-info {
+    width: 100%;
+  }
+
+  .article {
+    &__boost-box {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 
@@ -402,22 +173,6 @@
 
   .subtitle {
     font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .reason {
-    .slick-slider {
-      width: 560px;
-    }
-
-    &__slider-item {
-      max-width: 560px;
-    }
-
-    &__slider {
-      width: 560px;
-    }
   }
 }
 
@@ -468,310 +223,6 @@
     flex-direction: column;
   }
 
-  .slider {
-    .slick-slide {
-      width: 230px;
-      height: 230px;
-    }
-
-    .slick-slide + .slick-slide {
-      margin-left: 30px;
-    }
-
-    &__inner {
-      padding: 40px 0;
-    }
-
-    &__nav-left {
-      display: none !important;
-    }
-
-    &__nav-right {
-      display: none !important;
-    }
-
-    &__subtitle {
-      font-size: 16px;
-    }
-    &__title {
-      margin-bottom: 14px;
-    }
-
-    &__item {
-      padding: 26px 30px 30px 30px;
-    }
-
-    &__item-title {
-      font-size: 18px;
-    }
-
-    &__link {
-      margin-left: 0;
-    }
-
-    &__nav {
-      display: none;
-    }
-  }
-
-  .reason {
-    .slick-slider {
-      width: auto;
-    }
-
-    &__slider-item {
-      max-width: none;
-    }
-
-    &__slider {
-      width: auto;
-    }
-
-    padding: 34px 0px 40px;
-    &__top-title {
-    }
-
-    &__slider-item-title {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-
-    &__slider-item-btn {
-      display: block;
-      text-align: center;
-    }
-
-    &__nav-box {
-      margin-bottom: 25px;
-    }
-
-    &__expander-box {
-      grid-gap: 10px;
-    }
-
-    &__expander-item {
-      height: 78px;
-      padding: 0 20px;
-    }
-
-    &__expander-arrow {
-      margin-left: 20px;
-    }
-    &__slider-item-title {
-      line-height: 27px;
-    }
-
-    &__expander-title {
-      font-size: 16px;
-    }
-
-    &__img {
-      display: none;
-    }
-    &__text {
-      font-size: 18px;
-    }
-    &__slider {
-      margin-bottom: 34px;
-    }
-
-    &__bottom-title {
-      margin-bottom: 23px;
-    }
-
-    &__text {
-      margin-bottom: 35px;
-    }
-  }
-
-  .cases {
-    &__inner {
-      padding: 33px 0 40px;
-    }
-
-    &__box {
-      grid-row-gap: 33px;
-    }
-
-    &__head {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 31px;
-    }
-    &__head-title {
-      margin-bottom: 14px;
-    }
-
-    &__title {
-      font-size: 42px;
-      line-height: 53px;
-      margin-bottom: 1px;
-    }
-
-    &__subtitle {
-      font-size: 22px;
-      line-height: 29px;
-      margin-bottom: 14px;
-    }
-
-    &__text {
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
-  }
-
-  .tariffs {
-    &__head {
-      padding: 0 30px;
-    }
-
-    &__content {
-      padding: 25px 30px 30px 30px;
-    }
-
-    &__price-box {
-      margin-bottom: 30px;
-    }
-
-    &__expander {
-      padding: 26px 30px 30px 30px;
-    }
-
-    &__expander-content {
-      margin-top: 15px;
-    }
-    &__expander-text {
-      margin-bottom: 20px;
-    }
-
-    &__title {
-      font-size: 26px;
-      margin-bottom: 13px;
-      line-height: 34px;
-    }
-
-    &__text {
-      font-size: 16px;
-      margin-bottom: 13px;
-    }
-  }
-
-  .steps {
-    &__title {
-      font-size: 42px;
-      line-height: 53px;
-      margin-bottom: 9px;
-    }
-
-    &__text {
-      margin-bottom: 16px;
-    }
-
-    &__head {
-      margin-bottom: 24px;
-    }
-    &__inner {
-      padding: 33px 0 40px;
-    }
-
-    &__box {
-      grid-gap: 30px;
-      margin-bottom: 40px;
-    }
-    &__btn {
-      display: block;
-    }
-  }
-
-  .comments {
-    &__inner {
-      padding-top: 33px;
-    }
-
-    &__item {
-      padding: 100px 30px 40px 30px;
-    }
-    &__nav-left {
-      display: none !important;
-    }
-
-    &__text {
-      margin-bottom: 26px;
-    }
-
-    &__nav-right {
-      display: none !important;
-    }
-
-    &__title {
-      margin-bottom: 33px;
-    }
-
-    &__position {
-      margin-bottom: 26px;
-    }
-    &__slider {
-      padding-bottom: 40px;
-    }
-  }
-
-  .clients {
-    &__inner {
-      padding-top: 53px;
-    }
-
-    &__title {
-      margin-bottom: 60px;
-    }
-
-    &__box {
-      grid-template-columns: 1fr;
-    }
-
-    &__img {
-      grid-column: auto;
-
-      &:nth-last-child(1):nth-child(odd) {
-        grid-column: auto;
-      }
-
-      &:last-child {
-        margin-left: 0px;
-      }
-    }
-  }
-
-  .reg-app {
-    &__inner {
-      padding: 33px 0 40px;
-    }
-
-    &__title {
-      margin-bottom: 24px;
-    }
-
-    &__text {
-      font-size: 16px;
-      margin-bottom: 45px;
-    }
-    &__input {
-      width: 100%;
-      font-size: 16px;
-      &::placeholder {
-        font-size: 16px;
-      }
-    }
-
-    &__content {
-      max-width: none;
-    }
-
-    &__btn {
-      display: block;
-      width: 100%;
-    }
-  }
-
   .footer {
     &__inner {
       padding: 33px 0 10px;
@@ -797,6 +248,45 @@
     }
   }
 
+  .article {
+    & + & {
+      margin-top: 33px;
+    }
+
+    &__title {
+      margin-bottom: 23px;
+    }
+
+    &__boost-box {
+      grid-row-gap: 30px;
+    }
+
+    &__boost-item {
+      padding: 23px 0 0;
+    }
+
+    &__boost-number {
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    &__bottom-title {
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      margin-bottom: 34px;
+    }
+
+    &__list-number-item-text {
+      padding-left: 30px;
+    }
+
+    .aside-info {
+      margin-bottom: 40px;
+    }
+  }
+
   .title-h2 {
     font-size: 22px;
     line-height: 29px;
@@ -812,70 +302,6 @@
   }
 }
 
-@media (max-width: 550px) {
-  .header {
-  }
-
-  .tariffs {
-    &__inner {
-      padding: 33px 0 40px;
-    }
-
-    &__head {
-      margin-bottom: 40px;
-    }
-
-    &__head-title {
-      margin-bottom: 14px;
-    }
-
-    &__price-box {
-      flex-direction: column;
-    }
-
-    &__box {
-      grid-gap: 20px;
-    }
-    &__expander-list {
-      margin-bottom: 17px;
-    }
-
-    &__profit-price-box {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    &__profit-price-terms {
-      margin: 0;
-      width: auto;
-    }
-
-    &__regular-price {
-      margin-top: 15px;
-    }
-
-    &__regular-price-box {
-      margin-left: 0;
-    }
-
-    &__expander-list {
-      grid-template-columns: 1fr;
-    }
-
-    &__btn {
-      display: block;
-      text-align: center;
-    }
-  }
-}
-@media (max-width: 405px) {
-  .steps {
-    &__btn {
-      border-radius: 37px;
-    }
-  }
-}
-
 @media (max-width: 340px) {
   .header {
     &__home-bottom-btn {
@@ -888,14 +314,4 @@
       }
     }
   }
-
-  .reason {
-    &__slider-item-btn {
-      line-height: 22px;
-      border-radius: 30px;
-    }
-  }
-}
-
-@media (max-width: 320px) {
 }
