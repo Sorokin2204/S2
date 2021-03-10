@@ -30,9 +30,18 @@
       font-size: 16px;
       line-height: 150%;
       white-space: nowrap;
+
+      color: $green;
+      order: 0;
+    }
+
+    label + label {
+      color: $grey-dark;
+      order: 2;
     }
 
     input {
+      order: 1;
       margin: 0 20px;
       -webkit-appearance: none;
       width: 44px;
@@ -40,6 +49,7 @@
       border: 2px solid $grey-light;
       border-radius: 20px;
       position: relative;
+
       &::after {
         content: '';
         left: 2px;
@@ -51,6 +61,14 @@
         top: 50%;
         transform: translateY(-50%);
         transition: all 0.2s;
+      }
+
+      &:checked + label {
+        color: $grey-dark;
+      }
+
+      &:checked + label + label {
+        color: $green;
       }
 
       &:checked::after {
@@ -173,42 +191,50 @@
 
   &__head {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto;
     justify-content: space-between;
-    margin-bottom: 27px;
+    margin-bottom: 34px;
   }
 
   &__head-title {
     width: 330px;
   }
 
-  &__head-item-title {
+  &__head-item {
+  }
+
+  &__head-table {
+    border-collapse: collapse;
+  }
+
+  &__head-tr {
+  }
+
+  &__head-th {
+    padding: 0px 22px;
+    width: 162px;
     font-family: Ruda;
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
     line-height: 24px;
     color: $purple;
-    margin-bottom: 13px;
+    padding-bottom: 13px;
   }
 
-  &__head-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 170px);
-    justify-content: end;
-  }
-
-  &__head-item {
+  &__head-td {
+    padding: 0px 22px;
+    width: 162px;
     text-align: center;
   }
 
-  &__head-item-price {
+  &__head-td-price {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
   }
 
-  &__head-item-subprice {
+  &__head-td-subprice {
     font-size: 12px;
     line-height: 15px;
   }
@@ -221,64 +247,83 @@
     background-color: $white;
   }
 
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__th {
+    padding: 20px;
+    vertical-align: middle;
+    & + & {
+      width: 162px;
+      font-family: Ruda;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      color: $grey;
+    }
+
+    &:first-child {
+      text-align: left;
+      width: auto;
+      font-weight: 600;
+      font-size: 20px;
+      position: relative;
+      padding-left: 42px;
+      &::after {
+        width: 12px;
+        height: 7px;
+        content: '';
+        mask: url(../img/arrow-down.svg);
+        -webkit-mask-size: 12px 7px;
+        background-color: $magenta;
+        position: absolute;
+        top: 50%;
+        left: 21px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__tr {
+    &:first-child {
+    }
+  }
+
+  &__td {
+    padding: 20px;
+    vertical-align: middle;
+    width: 162px;
+    text-align: center;
+    line-height: 20px;
+    &:first-child {
+      width: auto;
+      text-align: left;
+    }
+
+    &:empty {
+      position: relative;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 13px;
+        height: 4px;
+        background-color: $grey-mid;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
   &__item-head {
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-  }
-
-  &__item-title {
-    padding: 20px;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 20px;
-    position: relative;
-    padding-left: 42px;
-    &::after {
-      width: 12px;
-      height: 7px;
-      content: '';
-      mask: url(../img/arrow-down.svg);
-      -webkit-mask-size: 12px 7px;
-      background-color: $magenta;
-      position: absolute;
-      top: 50%;
-      left: 21px;
-      transform: translateY(-50%);
-    }
-  }
-
-  &__item-head-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 170px);
-    justify-content: end;
-    align-items: center;
-  }
-
-  &__item-head-col {
-    font-family: Ruda;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    color: $grey;
-    padding: 20px;
-  }
-
-  &__item-box {
-    display: grid;
-    grid-template-columns: auto repeat(5, 170px);
-    align-items: center;
-  }
-
-  &__item-col {
-    padding: 20px;
-    text-align: center;
-  }
-
-  &__item-col-title {
-    padding: 20px;
-    text-align: left;
   }
 }

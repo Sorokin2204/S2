@@ -91,6 +91,20 @@ $(function () {
     }
   });
 
+  function priceToggle() {
+    if ($('#price-toggle').is(':checked')) {
+      $('.prices-tariffs__item-price-year').css('display', 'none');
+      $('.prices-tariffs__item-price-month').css('display', 'block');
+    } else {
+      $('.prices-tariffs__item-price-year').css('display', 'block');
+      $('.prices-tariffs__item-price-month').css('display', 'none');
+    }
+  }
+  priceToggle();
+  $('#price-toggle').on('change', () => {
+    priceToggle();
+  });
+
   $(document).on('click', function () {
     $('.menu__item--active').find('.sub-menu').toggleClass('sub-menu--active');
     $('.menu__item--active').toggleClass('menu__item--active');

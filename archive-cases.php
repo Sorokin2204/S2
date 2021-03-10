@@ -1,7 +1,8 @@
-<?php
+<?php get_header()
 
-get_header();
+
 ?>
+
 
 
 <main class="cases">
@@ -16,13 +17,16 @@ get_header();
                     <div class="cases__introduction">Внедрение S2 в производство сувенирной продукции</div>
                     <div class="cases__title"><?php the_title(); ?></div>
                     <div class="cases__subtitle">Кейс компании MUSTPRINT</div>
-                    <p class="cases__text"><?php echo get_the_excerpt() ?></p>
+                    <p class="cases__text">Сотрудники вели клиентскую базу в Excel, задачи фиксировали на канбан-досках.
+                        Но
+                        они все равно медленно обрабатывали заявки и часто забывали перезвонить заказчикам. А компания
+                        теряла до 700 тысяч рублей в месяц.</p>
                     <a href="<?php get_permalink() ?>" class="cases__link link"
                         aria-label="Читать содержание кейса : <?php the_title() ?>">Читать кейс </a>
                 </div>
                 <?php endwhile ?>
 
-                <!-- 
+
                 <div class="cases__item">
                     <img src="<?php echo  _s2_assets_path('img/cases-img.png') ?>" alt="" class="cases__img">
                     <div class="cases__introduction">На обработку заявок теперь уходит вдвое меньше времени</div>
@@ -66,7 +70,7 @@ get_header();
                         они все равно медленно обрабатывали заявки и часто забывали перезвонить заказчикам. А компания
                         теряла до 700 тысяч рублей в месяц.</p>
                     <a href="#" class="cases__link link">Читать кейс </a>
-                </div> -->
+                </div>
             </div>
             <?php else : ?>
             <p>НЕТ ЗАПИСЕй</p>
@@ -75,5 +79,7 @@ get_header();
     </div>
 </main>
 
-<? get_footer();
+<?php
+get_template_part('reg-app');
+get_footer();
 ?>

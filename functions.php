@@ -9,6 +9,7 @@ foreach ($widgets as $w) {
 
 
 add_action('after_setup_theme', 's2_setup');
+add_action('init', 's2_register_types');
 add_action('wp_enqueue_scripts', 's2_scripts');
 add_action('widgets_init', 's2_register');
 
@@ -28,7 +29,9 @@ function s2_setup()
             'menu-footer-4' => 'Меню в подвале №4'
         ]
     );
-    register_nav_menu('menu-header', 'Меню в шапке');
+    register_nav_menu('menu-header-bottom-business-apps', 'Меню "Бизнес-приложения S2"');
+    register_nav_menu('menu-header-bottom-about', 'Меню "Компания"');
+
     register_nav_menu('menu-header-social', 'Меню соц.сетей в шапке');
     register_nav_menu('menu-footer-social', 'Меню соц.сетей в подвале');
     add_theme_support('custom-logo');
@@ -93,6 +96,182 @@ function s2_register()
     //register_widget('s2_widget_social');
 }
 
+function s2_register_types()
+{
+
+
+    register_taxonomy('price-period', ['prices-tariff'], [
+        'label'                 => '',
+        'labels'                => [
+            'name'              => 'Оплата тарифа',
+            'singular_name'     => 'Оплата тарифа',
+            'search_items'      => 'Найти Оплату тарифа',
+            'all_items'         => 'Все оплаты тарифа',
+            'view_item '        => 'Посмотреть Оплату тарифа',
+            'edit_item'         => 'Редактировать Оплату тарифа',
+            'update_item'       => 'Обновить Оплату тарифа',
+            'add_new_item'      => 'Добавить Оплату тарифа',
+            'new_item_name'     => 'Новая Оплата тарифа',
+            'menu_name'         => 'Все оплаты тарифа',
+        ],
+        'description'           => '', // описание таксономии
+        'public'                => true,
+        'hierarchical'          => true,
+    ]);
+
+
+    register_post_type('cases', array(
+        'labels'             => array(
+            'name'               => 'Кейсы', // Основное название типа записи
+            'singular_name'      => 'Кейс', // отдельное название записи типа Book
+            'add_new'            => 'Добавить новый',
+            'add_new_item'       => 'Добавить новый кейс',
+            'edit_item'          => 'Редактировать кейс',
+            'new_item'           => 'Новый кейс',
+            'view_item'          => 'Посмотреть кейс',
+            'search_items'       => 'Найти кейс',
+            'not_found'          => 'Кейсов не найдено',
+            'not_found_in_trash' => 'В корзине кейсов не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Кейсы'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+    register_post_type('prices', array(
+        'labels'             => array(
+            'name'               => 'Стоимость', // Основное название типа записи
+            'singular_name'      => 'Стоимость', // отдельное название записи типа Book
+            'add_new'            => 'Добавить новую стоимость',
+            'add_new_item'       => 'Добавить новую стоимость',
+            'edit_item'          => 'Редактировать стоимость',
+            'new_item'           => 'Новая стоимость',
+            'view_item'          => 'Посмотреть стоимость',
+            'search_items'       => 'Найти стоимость',
+            'not_found'          => 'стоимости не найдено',
+            'not_found_in_trash' => 'В корзине стоимости не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Стоимость'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+
+    register_post_type('prices-tariff', array(
+        'labels'             => array(
+            'name'               => 'Тарифные планы', // Основное название типа записи
+            'singular_name'      => 'Тарифный план', // отдельное название записи типа Book
+            'add_new'            => 'Добавить новый тариф',
+            'add_new_item'       => 'Добавить новый тариф',
+            'edit_item'          => 'Редактировать тариф',
+            'new_item'           => 'Новый тариф',
+            'view_item'          => 'Посмотреть тариф',
+            'search_items'       => 'Найти тариф',
+            'not_found'          => 'Тарифов не найдено',
+            'not_found_in_trash' => 'В корзине тарифов не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Тарифные планы'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+
+    register_post_type('prices-comparison', array(
+        'labels'             => array(
+            'name'               => 'Сравнение планов',
+            'singular_name'      => 'Сравнение плана',
+            'add_new'            => 'Добавить новое сравнение планов',
+            'add_new_item'       => 'Добавить новое сравнение планов',
+            'edit_item'          => 'Редактировать сравнение планов',
+            'new_item'           => 'Новое сравнение планов',
+            'view_item'          => 'Посмотреть сравнение планов',
+            'search_items'       => 'Найти сравнение планов',
+            'not_found'          => 'Сравнение лановне найдено',
+            'not_found_in_trash' => 'В корзине сравнений планов не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Сравнение планов'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+    register_post_type('prices-comparison-hd', array(
+        'labels'             => array(
+            'name'               => 'Сравнение планов (шапка)',
+            'singular_name'      => 'Сравнение плана (шапка)',
+            'add_new'            => 'Добавить новое сравнение планов (шапка)',
+            'add_new_item'       => 'Добавить новое сравнение планов (шапка)',
+            'edit_item'          => 'Редактировать сравнение планов (шапка)',
+            'new_item'           => 'Новое сравнение планов (шапка)',
+            'view_item'          => 'Посмотреть сравнение планов (шапка)',
+            'search_items'       => 'Найти сравнение планов (шапка)',
+            'not_found'          => 'Сравнение планов (шапка) найдено',
+            'not_found_in_trash' => 'В корзине сравнений планов (шапка) не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Сравнение сравнений планов (шапка) '
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+}
+
 function _s2_assets_path($path)
 {
     return get_template_directory_uri() . '/assets/' . $path;
@@ -122,6 +301,11 @@ function filter_nav_menu_css_class($classes, $item, $args, $depth)
                 $classes[] = 'social__item';
             }
             break;
+        case 'menu-header-bottom-business-apps':
+        case 'menu-header-bottom-about': {
+                $classes[] = 'list__item';
+            }
+            break;
     }
     return $classes;
 }
@@ -147,6 +331,11 @@ function filter_nav_menu_link_attributes($atts, $item, $args, $depth)
         case 'menu-footer-social':
         case 'menu-header-social': {
                 $atts['class'] = 'social__link';
+            }
+            break;
+        case 'menu-header-bottom-business-apps':
+        case 'menu-header-bottom-about': {
+                $atts['class'] = 'list__link link';
             }
             break;
     }
