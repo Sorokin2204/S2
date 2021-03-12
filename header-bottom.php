@@ -2,6 +2,8 @@
          <div class="container">
              <div class="header__bottom-inner">
                  <div class="header__bottom-content">
+
+
                      <h1 class="header__bottom-title title">
                          <?php
                             $postType = get_queried_object();
@@ -9,7 +11,6 @@
                             ?>
                      </h1>
                      <?php
-
                         $theme_location = '';
                         switch (true) {
                             case is_post_type_archive('business-apps'):
@@ -30,6 +31,11 @@
                             ]);
                         }
                         ?>
+
+
+
+
+
                  </div>
              </div>
          </div>

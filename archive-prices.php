@@ -56,7 +56,8 @@
                                         <div class="prices-tariffs__item-text"> <?php the_field('tariff_text') ?></div>
                                         <div class="prices-tariffs__item-price prices-tariffs__item-price-month">
                                             <?php the_field('tariff_price-month') ?> ₽/месяц</div>
-                                        <div class="prices-tariffs__item-price prices-tariffs__item-price-year"><?php the_field('tariff_price-year') ?>
+                                        <div class="prices-tariffs__item-price prices-tariffs__item-price-year">
+                                            <?php the_field('tariff_price-year') ?>
                                             ₽/год</div>
                                         <div class="prices-tariffs__item-subprice">за пользователя</div>
                                         <a href="#" class="prices-tariffs__item-btn btn">Попробовать бесплатно</a>

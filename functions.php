@@ -150,6 +150,42 @@ function s2_register_types()
     ));
 
 
+
+    register_post_type('cases-list', array(
+        'labels'             => array(
+            'name'               => 'Список для кейсов', // Основное название типа записи
+            'singular_name'      => 'Список для кейсов', // отдельное название записи типа Book
+            'add_new'            => 'Добавить список для кейсов',
+            'add_new_item'       => 'Добавить список для кейсов',
+            'edit_item'          => 'Редактировать список для кейсов',
+            'new_item'           => 'Новый список для кейсов',
+            'view_item'          => 'Посмотреть список для кейсов',
+            'search_items'       => 'Найти список для кейсов',
+            'not_found'          => 'список для кейсов не найдено',
+            'not_found_in_trash' => 'В корзине список для кейсов не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Список для кейсов'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+
+
+
+
+
     register_post_type('prices', array(
         'labels'             => array(
             'name'               => 'Стоимость', // Основное название типа записи
@@ -391,3 +427,32 @@ function filter_dynamic_sidebar_params($params)
 
     return $params;
 }
+
+
+
+function my_page_columns($columns)
+{
+    $columns = array(
+        'cb' => '< input type="checkbox" />',
+        'title' => 'Title',
+        'cases_item-text' => 'Custom Field'
+    );
+    return $columns;
+}
+add_action("manage_cases-list_posts_custom_column", "my_custom_columns");
+
+
+
+function my_custom_columns($column)
+{
+    global $post;
+    if ($column == 'cases_item-text') {
+        echo get_field('cases_item-text', $post->ID);
+    } else {
+        echo '';
+    }
+}
+
+
+
+add_filter("manage_edit-cases-list_columns", "my_page_columns");

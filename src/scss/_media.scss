@@ -5,6 +5,34 @@
 
   .header {
     background-image: url('../img/header-bg-960.png');
+
+    &__case-bottom {
+      padding: 67px 0px 54px;
+    }
+
+    &__case-bottom-inner {
+    }
+
+    &__case-bottom-content {
+      margin-top: 57px;
+    }
+
+    &__case-bottom-link-back {
+    }
+
+    &__case-bottom-overtitle {
+    }
+
+    &__case-bottom-title {
+    }
+
+    &__case-bottom-subtitle {
+    }
+
+    &__case-bottom-img {
+      width: 267px;
+      height: 200px;
+    }
   }
 
   .footer {
@@ -66,7 +94,7 @@
     }
 
     &__content {
-      grid-template-columns: 100%;
+      display: block;
     }
 
     &__top {
@@ -124,6 +152,38 @@
       font-size: 18px;
     }
 
+    &__case-bottom {
+      padding: 52px 0px 54px;
+    }
+
+    &__case-bottom-inner {
+      flex-direction: column;
+    }
+
+    &__case-bottom-content {
+      order: 1;
+      margin-top: 50px;
+    }
+
+    &__case-bottom-link-back {
+    }
+
+    &__case-bottom-overtitle {
+    }
+
+    &__case-bottom-title {
+    }
+
+    &__case-bottom-subtitle {
+    }
+
+    &__case-bottom-img {
+      order: 0;
+      margin-top: 80px;
+      width: 260px;
+      height: 194px;
+    }
+
     &__login {
       display: none;
     }
@@ -152,7 +212,7 @@
   .footer {
     &__contact-box,
     &__list-box {
-      grid-template-columns: repeat(2, 260px);
+      grid-template-columns: repeat(2, 260px) !important;
     }
   }
 
@@ -215,6 +275,41 @@
       margin-bottom: 35px;
     }
 
+    &__case-bottom {
+      padding: 33px 0px;
+    }
+
+    &__case-bottom-inner {
+      flex-direction: column;
+    }
+
+    &__case-bottom-content {
+      order: 1;
+      margin-top: 32px;
+    }
+
+    &__case-bottom-link-back {
+    }
+
+    &__case-bottom-overtitle {
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    &__case-bottom-title {
+      margin-bottom: 12px;
+    }
+
+    &__case-bottom-subtitle {
+    }
+
+    &__case-bottom-img {
+      order: 0;
+      margin-top: 60px;
+      width: 260px;
+      height: 194px;
+    }
+
     &__tel {
       display: none;
     }
@@ -233,7 +328,7 @@
     }
 
     &__contact-box {
-      grid-template-columns: auto;
+      grid-template-columns: auto !important;
     }
 
     &__contact-item {
@@ -248,7 +343,7 @@
 
     &__list-box {
       margin-top: 40px;
-      grid-template-columns: auto;
+      grid-template-columns: auto !important;
     }
   }
 

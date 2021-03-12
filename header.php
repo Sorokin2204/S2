@@ -64,9 +64,12 @@
 
             if (isHomePage()) {
                 get_template_part('header-bottom-home');
+            } else if (is_singular('cases')) {
+                get_template_part('header-bottom-case');
             } else {
                 get_template_part('header-bottom');
             }
+
             ?>
         </div>
     </header>

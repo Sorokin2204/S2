@@ -295,7 +295,7 @@ li {
   font-size: 18px;
   color: $blue;
   display: inline-block;
-  white-space: nowrap;
+  //white-space: nowrap;
   &::after {
     content: '';
     display: block;

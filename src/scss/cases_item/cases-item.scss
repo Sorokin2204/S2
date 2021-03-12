@@ -1,6 +1,9 @@
 .cases-item {
   padding: 80px 0px 84px;
 
+  .article__text {
+  }
+
   .aside-info__text {
     margin-bottom: 40px;
   }
@@ -9,14 +12,32 @@
     margin-top: 18px;
   }
   &__solution-list-number {
-    margin-bottom: 54px;
+    margin-bottom: 0px;
   }
 
   &__solution-bottom-aside-info {
     align-self: end;
+    grid-column: 2 / 3;
+  }
+
+  &__solution-bottom {
+    grid-row: 2 / 4;
+  }
+
+  &__solution-top-aside-info {
+    align-self: flex-start;
+    grid-row: auto / span 2;
   }
 
   &__task-list-number {
     margin-bottom: 84px;
+  }
+
+  &__resault-text {
+    margin-bottom: 75px;
+  }
+
+  &__solution-text {
+    margin-bottom: 35px;
   }
 }
