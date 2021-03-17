@@ -19,7 +19,7 @@
     font-size: 20px;
     line-height: 140%;
     color: $white;
-    margin-bottom: 42px;
+    margin-bottom: 14px;
   }
 
   &__input {
@@ -32,10 +32,7 @@
     color: $white;
     font-size: 20px;
     line-height: 140%;
-    & + & {
-      margin-top: 28px;
-    }
-
+    margin-top: 28px;
     &::placeholder {
       color: $white;
       font-size: 20px;

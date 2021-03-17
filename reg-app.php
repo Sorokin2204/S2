@@ -1,22 +1,19 @@
 <section class="reg-app" style="background-image: url( <?php echo _s2_assets_path('img/reg-app-bg-1920.png'); ?>)">
     <div class="container">
         <div class="reg-app__inner">
+            <?php
+            $reg_app_post = get_post(284);
+            if ($reg_app_post) : ?>
             <div class="reg-app__content">
-                <h2 class="reg-app__title title">Заявка на регистрацию</h2>
+                <h2 class="reg-app__title title"><?php echo $reg_app_post->post_title ?></h2>
                 <p class="reg-app__text">
-                    Тем не менее, конвесия покупателя определяет коллективный пак-шот.
-                    Рейтинг нетривиален. Правда, специалисты отмечают, что служба
-                    маркетинга компании по-прежнему востребована.
+                    <?php echo get_field('reg-app_text', $reg_app_post->ID, true) ?>
                 </p>
-                <form>
-                    <input class="reg-app__input" type="text" placeholder="Ваше имя" />
-                    <input class="reg-app__input" type="text" placeholder="Компания" />
-                    <input class="reg-app__input" type="email" placeholder="Электронная почта" />
-                    <button class="reg-app__btn btn" type="submit">
-                        Отправить заявку
-                    </button>
-                </form>
+
+                <?php echo do_shortcode(get_field('reg-app_shortcode', $reg_app_post->ID, true))  ?>
+
             </div>
+            <?php endif ?>
         </div>
     </div>
 </section>

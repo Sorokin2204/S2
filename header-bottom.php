@@ -6,14 +6,30 @@
 
                      <h1 class="header__bottom-title title">
                          <?php
-                            $postType = get_queried_object();
-                            echo esc_html($postType->labels->singular_name);
+
+                            if (is_singular('business-apps')) {
+                                $post = get_queried_object();
+                                $postType = get_post_type_object(get_post_type($post));
+                                if ($postType) {
+                                    echo esc_html($postType->labels->singular_name);
+                                }
+                            } else {
+
+                                $postType = get_queried_object();
+                                echo esc_html($postType->labels->singular_name);
+                            }
+
+
+
                             ?>
+
+
                      </h1>
                      <?php
                         $theme_location = '';
                         switch (true) {
                             case is_post_type_archive('business-apps'):
+                            case is_singular('business-apps'):
                                 $theme_location = 'menu-header-bottom-business-apps';
                                 break;
                             case is_post_type_archive('about'):

@@ -6,7 +6,8 @@
   }
 
   &__content {
-    margin-left: 82px;
+    max-width: 954px;
+    width: 100%;
   }
 
   &__box {
@@ -30,6 +31,10 @@
     width: 291px;
     height: 336px;
     border-radius: 10px;
+    a {
+      display: block;
+      color: $grey-dark;
+    }
   }
 
   &__item-img {
@@ -72,20 +77,22 @@
   &__list {
   }
 
-  &__item {
+  &__link {
     & + & {
       margin-top: 14px;
     }
-  }
-
-  &__link {
+    display: block;
     line-height: 22px;
-
+    white-space: nowrap;
     &--active {
       color: $grey-dark;
       &::after {
         display: none;
       }
     }
+
+    border: none;
+    background-color: transparent;
+    padding: 0;
   }
 }

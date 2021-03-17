@@ -138,7 +138,29 @@ $(function () {
     image_field.val(imgurl);
     tb_remove();
   };
+
+  $('.business-apps-aside__link').on('click', changeCategory);
 });
+
+function changeCategory() {
+  $('.business-apps-aside__link').removeClass(
+    'business-apps-aside__link--active',
+  );
+  $(this).addClass('business-apps-aside__link--active');
+
+  $.ajax({
+    type: 'POST',
+    url: '/wp-admin/admin-ajax.php',
+    dataType: 'html',
+    data: {
+      action: 'business_apps_cat',
+      category: $(this).data('slug'),
+    },
+    success: function (data) {
+      $('.business-apps__content').html(data);
+    },
+  });
+}
 
 function tariffsContainer() {
   if (window.innerWidth <= 640) {
@@ -168,3 +190,7 @@ $(window).resize(() => {
   tariffsContainer();
   commentsContainer();
 });
+
+window.onload = () => {
+  $('.business-apps-aside__link').first().on('click', changeCategory).click();
+};

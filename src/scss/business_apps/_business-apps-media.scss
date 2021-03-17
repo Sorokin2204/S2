@@ -48,7 +48,7 @@
       margin-bottom: 40px;
     }
 
-    &__item {
+    &__link {
       & + & {
         margin-top: 0px;
       }
@@ -98,9 +98,6 @@
     }
 
     &__item {
-      & + & {
-        margin-top: 0px;
-      }
     }
   }
 }
@@ -143,6 +140,7 @@
   .business-apps-aside {
     &__list {
       flex-direction: column;
+      align-items: flex-start;
       margin-bottom: 25px;
     }
 

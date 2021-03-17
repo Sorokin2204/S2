@@ -12,6 +12,8 @@ add_action('after_setup_theme', 's2_setup');
 add_action('init', 's2_register_types');
 add_action('wp_enqueue_scripts', 's2_scripts');
 add_action('widgets_init', 's2_register');
+add_action('wp_ajax_business_apps_cat', 'filter_business_apps_cat');
+add_action('wp_ajax_nopriv_business_apps_cat', 'filter_business_apps_cat');
 
 
 add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 1, 4);
@@ -119,6 +121,25 @@ function s2_register_types()
         'hierarchical'          => true,
     ]);
 
+    register_taxonomy('business-apps-category', ['business-apps'], [
+        'label'                 => '',
+        'labels'                => [
+            'name'              => 'Категория бизнес-приложения',
+            'singular_name'     => 'Категория бизнес-приложения',
+            'search_items'      => 'Найти категорию бизнес-приложения',
+            'all_items'         => 'Все категории бизнес-приложения',
+            'view_item '        => 'Посмотреть категорию бизнес-приложения',
+            'edit_item'         => 'Редактировать категория бизнес-приложения',
+            'update_item'       => 'Обновить категорию бизнес-приложения',
+            'add_new_item'      => 'Добавить категорию бизнес-приложения',
+            'new_item_name'     => 'Новая категория бизнес-приложения',
+            'menu_name'         => 'Все категории бизнес-приложения',
+        ],
+        'description'           => '', // описание таксономии
+        'public'                => true,
+        'hierarchical'          => true,
+    ]);
+
 
     register_post_type('cases', array(
         'labels'             => array(
@@ -151,6 +172,41 @@ function s2_register_types()
 
 
 
+    register_post_type('about', array(
+        'labels'             => array(
+            'name'               => 'О комапнии', // Основное название типа записи
+            'singular_name'      => 'О комапнии', // отдельное название записи типа Book
+            'add_new'            => 'Добавить новый',
+            'add_new_item'       => 'Добавить новый О комапнии',
+            'edit_item'          => 'Редактировать О комапнии',
+            'new_item'           => 'Новый О комапнии',
+            'view_item'          => 'Посмотреть О комапнии',
+            'search_items'       => 'Найти О комапнии',
+            'not_found'          => 'О комапнииов не найдено',
+            'not_found_in_trash' => 'В корзине О комапнииов не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'О компании'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+
+
+
+
+
     register_post_type('cases-list', array(
         'labels'             => array(
             'name'               => 'Список для кейсов', // Основное название типа записи
@@ -170,7 +226,7 @@ function s2_register_types()
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
-        'show_in_menu'       => true,
+        'show_in_menu'       => 'edit.php?post_type=cases',
         'query_var'          => true,
         'rewrite'            => true,
         'capability_type'    => 'post',
@@ -236,7 +292,7 @@ function s2_register_types()
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
-        'show_in_menu'       => true,
+        'show_in_menu'       => 'edit.php?post_type=prices',
         'query_var'          => true,
         'rewrite'            => true,
         'capability_type'    => 'post',
@@ -267,7 +323,7 @@ function s2_register_types()
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
-        'show_in_menu'       => true,
+        'show_in_menu'       => 'edit.php?post_type=prices',
         'query_var'          => true,
         'rewrite'            => true,
         'capability_type'    => 'post',
@@ -297,11 +353,156 @@ function s2_register_types()
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
-        'show_in_menu'       => true,
+        'show_in_menu'       => 'edit.php?post_type=prices',
         'query_var'          => true,
         'rewrite'            => true,
         'capability_type'    => 'post',
         'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+    register_post_type('reviews', array(
+        'labels'             => array(
+            'name'               => 'Отзывы',
+            'singular_name'      => 'Отзыв',
+            'add_new'            => 'Добавить новый отзыв',
+            'add_new_item'       => 'Добавить новый отзыв',
+            'edit_item'          => 'Редактировать отзыв',
+            'new_item'           => 'Новый отзыв',
+            'view_item'          => 'Посмотреть отзыв',
+            'search_items'       => 'Найти отзыв',
+            'not_found'          => 'Сравнение отзывов',
+            'not_found_in_trash' => 'В корзине отзывов не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Отзывы'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+
+    register_post_type('business-apps', array(
+        'labels'             => array(
+            'name'               => 'Бизнес-приложения ',
+            'singular_name'      => 'Бизнес-приложение ',
+            'add_new'            => 'Добавить новые бизнес-приложения ',
+            'add_new_item'       => 'Добавить новое бизнес-приложение ',
+            'edit_item'          => 'Редактировать бизнес-приложение ',
+            'new_item'           => 'Новое бизнес-приложение ',
+            'view_item'          => 'Посмотреть бизнес-приложение ',
+            'search_items'       => 'Найти бизнес-приложение ',
+            'not_found'          => 'Сравнение бизнес-приложений ',
+            'not_found_in_trash' => 'В корзине бизнес-приложений  не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Бизнес-приложения '
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+    register_post_type('business-apps-list', array(
+        'labels'             => array(
+            'name'               => 'Список бизнес-приложения',
+            'singular_name'      => 'Список бизнес-приложения',
+            'add_new'            => 'Добавить новые бизнес-приложения',
+            'add_new_item'       => 'Добавить новое бизнес-приложение',
+            'edit_item'          => 'Редактировать бизнес-приложение',
+            'new_item'           => 'Новое бизнес-приложение',
+            'view_item'          => 'Посмотреть бизнес-приложение',
+            'search_items'       => 'Найти бизнес-приложение',
+            'not_found'          => 'Сравнение бизнес-приложений',
+            'not_found_in_trash' => 'В корзине бизнес-приложений  не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Список для бизнес-приложения '
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => 'edit.php?post_type=business-apps',
+        'query_var'          => true,
+        'rewrite'            => false,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+    register_post_type('business-adv-list', array(
+        'labels'             => array(
+            'name'               => 'Список преимуществ бизнес-приложенияя',
+            'singular_name'      => 'Список преимуществ бизнес-приложения',
+            'add_new'            => 'Добавить новые Список преимуществ бизнес-приложения',
+            'add_new_item'       => 'Добавить новое Список преимуществ бизнес-приложения',
+            'edit_item'          => 'Редактировать Список преимуществ бизнес-приложения',
+            'new_item'           => 'Новое Список преимуществ бизнес-приложения',
+            'view_item'          => 'Посмотреть Список преимуществ бизнес-приложения',
+            'search_items'       => 'Найти Список преимуществ бизнес-приложения',
+            'not_found'          => 'Сравнение Список преимуществ бизнес-приложений',
+            'not_found_in_trash' => 'В корзине Список преимуществ бизнес-приложений  не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Список преимуществ бизнес-приложения '
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => 'edit.php?post_type=business-apps',
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title')
+    ));
+
+
+
+
+    register_post_type('reg-app', array(
+        'labels'             => array(
+            'name'               => 'Заявки на регистрацию',
+            'singular_name'      => 'Заявка на регистрацию',
+            'add_new'            => 'Добавить новые заявки на регистрацию',
+            'add_new_item'       => 'Добавить новую заявку на регистрацию',
+            'edit_item'          => 'Редактировать заявку на регистрацию',
+            'new_item'           => 'Новая заявка на регистрацию',
+            'view_item'          => 'Посмотреть заявку на регистрацию',
+            'search_items'       => 'Найти заявку на регистрацию',
+            'not_found'          => 'Сравнение Заявка на регистрацию',
+            'not_found_in_trash' => 'В корзине Заявка на регистрацию не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Заявки на регистрацию'
+
+        ),
+        'public'             => true,
+        'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
         'supports'           => array('title')
@@ -369,10 +570,20 @@ function filter_nav_menu_link_attributes($atts, $item, $args, $depth)
                 $atts['class'] = 'social__link';
             }
             break;
-        case 'menu-header-bottom-business-apps':
+
         case 'menu-header-bottom-about': {
                 $atts['class'] = 'list__link link';
             }
+
+        case 'menu-header-bottom-business-apps': {
+                $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                if ($actual_link == $atts['href']) {
+                    $atts['class'] = 'list__link link list__link--active';
+                } else {
+                    $atts['class'] = 'list__link link';
+                }
+            }
+
             break;
     }
     return $atts;
@@ -453,6 +664,68 @@ function my_custom_columns($column)
     }
 }
 
-
-
 add_filter("manage_edit-cases-list_columns", "my_page_columns");
+
+
+function filter_business_apps_cat()
+{
+    $catSlug = $_POST['category'];
+    $response = '';
+    $cat = (object) '';
+    if ($catSlug == 'all') {
+        $args = [
+            'posts_per_page' => -1,
+            'post_type' => 'business-apps',
+
+        ];
+
+        $args_terms = [
+            'taxonomy' => 'business-apps-category',
+            'orderby' =>  'meta_value_num',
+            'order' =>  'ASC',
+            'orderby' => 'slug',
+            'hide_empty' =>  false,
+        ];
+    } else {
+        $args = [
+            'posts_per_page' => -1,
+            'post_type' => 'business-apps',
+            'business-apps-category' => $catSlug,
+        ];
+
+        $args_terms = [
+            'taxonomy' => 'business-apps-category',
+            'slug' => $catSlug
+        ];
+    }
+
+    $list_cat = get_terms($args_terms);
+
+    foreach ($list_cat as $cat) {
+        if ($catSlug == 'all')
+            $ajaxposts =  new WP_Query($args + ['business-apps-category' => $cat->slug]);
+        else {
+            $ajaxposts =  new WP_Query($args);
+        }
+        if ($ajaxposts->have_posts()) {
+            $response = <<<EODD
+        <div class="business-apps__box">
+       <div class="business-apps__title title-h2"> $cat->name </div>
+       <ul class="business-apps__list">
+EODD;
+            echo $response;
+            while ($ajaxposts->have_posts()) {
+                $ajaxposts->the_post();
+                $response = get_template_part('src/templates/_business-apps-item');
+            }
+            wp_reset_postdata();
+            echo $response;
+            $response = <<<EOD
+        </ul>
+        </div>
+EOD;
+            echo $response;
+        }
+    }
+    wp_die();
+}

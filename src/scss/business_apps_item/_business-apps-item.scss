@@ -42,9 +42,25 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
+    counter-reset: advantage-list-number;
   }
 
   &__item {
+    counter-increment: advantage-list-number;
+
+    .business-apps-item-advantages__number {
+      &::before {
+        content: '0' counter(advantage-list-number) '';
+      }
+    }
+
+    &:nth-child(n + 10) {
+      .business-apps-item-advantages__number {
+        &::before {
+          content: counter(advantage-list-number) '';
+        }
+      }
+    }
   }
 
   &__number {
